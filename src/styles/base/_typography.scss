@@ -1,0 +1,74 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+	font-family: 'Lato', sans-serif;
+	font-size: #{$defaultfontsize}#{$unit};
+	line-height: 1.5;
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+}
+
+// STYLES ------------------------------------------------
+
+.txt-light {
+	font-weight: 300;
+}
+
+.txt-regular {
+	font-weight: 400;
+}
+
+.txt-bold {
+	font-weight: 700;
+}
+
+.txt-italic {
+	font-style: italic;
+}
+
+.txt-uppercase {
+	text-transform: uppercase;
+}
+
+.txt-underline {
+	text-decoration: underline;
+}
+
+.txt-decoration-none {
+	text-decoration: none;
+}
+
+// SIZES -------------------------------------------------
+
+.txt-xxs {
+	font-size: rem(10);
+}
+
+.txt-xs {
+	font-size: rem(12);
+}
+
+.txt-s {
+	font-size: rem(14);
+}
+
+.txt-m {
+	font-size: rem(16);
+}
+
+.txt-l {
+	font-size: rem(18);
+}
+
+.txt-xl {
+	font-size: rem(20);
+}
+
+.txt-xxl {
+	font-size: rem(32);
+}

@@ -1,0 +1,23 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+@mixin IE {
+
+	@media screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {
+		@content;
+	}
+}
+
+@mixin IOS {
+	@supports (-webkit-overflow-scrolling: touch) {
+		@content;
+	}
+}
+
+@mixin MS {
+	@supports (-ms-ime-align: auto) {
+		@content;
+	}
+}

@@ -1,0 +1,17 @@
+// CORE ----------------------------
+@import './core.scss';
+
+/** PAGES --------------------------
+  * TODO: When you create a new page, you MUST import the scss file here.
+	* IMPORTANT: Only the homepage style is located inside the styles folder and not in the page component folder
+	* IMPORTANT: It happen because you can't put the index page inside a folder, it must be in the root.
+	* NOTE: Always add the style related to a page inside the page component folder (src/page/<page-name>/_<page-name>.scss)
+  */
+@import 'pages/homepage';
+@import '../pages/about/about';
+
+/** COMPONENTS ---------------------
+  * TODO: When you create a new component, you MUST import the scss file here.
+	* NOTE: Always add the style related to a component inside the component folder (src/component/<component-name>/_<component-name>.scss)
+  */
+@import '../components/ItemList/item-list';

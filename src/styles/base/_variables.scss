@@ -1,0 +1,22 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+// Browser defaults
+$defaultfontsize: 16;
+
+// Breakpoints
+$mobile: 480;
+$tablet: 768;
+$laptop: 992;
+$desktop: 1200;
+$bigscreen: 1600;
+
+// Specify the unit to use with BREAKPOINTS and DEFAULT FONT-SIZE
+$unit: px;
+
+// Content containers
+$mobileContainer: calc(#{$mobile}#{$unit} - 20#{$unit});
+$tabletContainer: calc(#{$tablet}#{$unit} - 20#{$unit});
+$laptopContainer: calc(#{$laptop}#{$unit} - 20#{$unit});
+$desktopContainer: calc(#{$desktop}#{$unit} - 20#{$unit});

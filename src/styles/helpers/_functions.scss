@@ -1,0 +1,10 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+@use "sass:math";
+
+// Convert pixel to REM. Should be used on fonts, margins and paddings.
+@function rem($pixels, $context: $defaultfontsize) {
+	@return #{math.div($pixels, $context)}rem;
+}

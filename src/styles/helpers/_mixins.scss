@@ -1,0 +1,151 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+/** FLEX
+  * note: usage: @include flex(direction_value, justify_value, align_value, wrap_value);
+  * If you would not like to set a property you can use "unset" as a value.
+  */
+@mixin flex($direction, $justify, $align, $wrap) {
+	display: flex;
+
+	@if ($direction !=unset) {
+		flex-direction: $direction;
+	}
+
+	@if ($justify !=unset) {
+		justify-content: $justify;
+	}
+
+	@if ($align !=unset) {
+		align-items: $align;
+	}
+
+	@if ($wrap !=unset) {
+		flex-wrap: $wrap;
+	}
+}
+
+/** GRID
+  * note: usage: @include grid(row_value, column_value, gap_value);
+  * You MUST need to inform all values.
+  * The autoprefixer will automatically convert it to be frendly to you browsers list.
+  */
+@mixin grid($row, $column, $gap) {
+	display: grid;
+	grid-template-rows: $row;
+	grid-template-columns: $column;
+	grid-gap: $gap;
+}
+
+/**
+  * This mixin must be called only on elements that the parent has display: grid;
+  * The autoprefixer will automatically convert it to be frendly to you browsers list.
+  */
+@mixin grid-child($row, $column) {
+	grid-row: $row;
+	grid-column: $column;
+}
+
+/** ABSOLUTE POSITION
+  * note: usage: @include absolute(top_value, right_value, bottom_value, left_value);
+  * If you would not like to set a property you can use "unset" as a value.
+  * Remember that you must use position: relative on the parent (or higher hierarchy) to make it works.
+  */
+@mixin absolute($top, $right, $bottom, $left) {
+	position: absolute;
+
+	@if ($top !=unset) {
+		top: $top;
+	}
+
+	@if ($right !=unset) {
+		right: $right;
+	}
+
+	@if ($bottom !=unset) {
+		bottom: $bottom;
+	}
+
+	@if ($left !=unset) {
+		left: $left;
+	}
+}
+
+/** MIDDLE IMAGE
+  * This mixin will positionate the image in the middle (vertical and horizontal) of the element.
+  * note: usage: @include middle-image;
+  * Remember that you must use position: relative of the parent and you must set the width and height of the parent.
+  * You need to use the overflow: hidden if the image is bigger than the parent element.
+  */
+@mixin middle-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/** ICONS AS PSEUDO ELEMENTS
+  * This mixin will help you to add any icon from fontawesome as pseudo element in any element.
+  * note: usage: @include font-icon() { ... set any custom property ... };
+  * note: Use \ before the icon-code.
+  * If you will not set to the pseudo element an absolute position, you should set the last four values as "unset".
+  * If you would not like to set any property related to absolute position you can use "unset"as a value.
+  * The family value must be "fab | far | fas", you can find this info on the fontawesome website.
+  * To accept different families you should go to theme/YOUR_THEME/base/_icons.scss.
+  * To get the font codes and discover the family go to https: //fontawesome.com/
+  * If you are using attr() to set the icon, use the unicode glyph instead of icon code.
+  * EXAMPLE:
+     @include font-icon('fas', 'before', '\f135', 0, unset, unset, 0) {
+      font-size: 30px;
+      color: $primary-colour;
+     }
+  */
+@mixin font-icon($family, $position, $icon-code, $top, $right, $bottom, $left) {
+	&::#{$position} {
+
+		@if ($family=='fab') {
+			font-family: 'Font Awesome 5 Brands';
+			font-weight: 400;
+		}
+
+		@else if ($family=='far') {
+			font-family: 'Font Awesome 5 Regular';
+			font-weight: 400;
+		}
+
+		@else {
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+		}
+
+		content: $icon-code;
+		$showPosition: 'true';
+
+		@if ($top==unset and $right==unset and $bottom==unset and $left==unset) {
+			$showPosition: 'false';
+		}
+
+		@if ($showPosition=='true') {
+			position: absolute;
+		}
+
+		@if ($top !=unset) {
+			top: $top;
+		}
+
+		@if ($right !=unset) {
+			right: $right;
+		}
+
+		@if ($bottom !=unset) {
+			bottom: $bottom;
+		}
+
+		@if ($left !=unset) {
+			left: $left;
+		}
+
+		@content;
+	}
+}

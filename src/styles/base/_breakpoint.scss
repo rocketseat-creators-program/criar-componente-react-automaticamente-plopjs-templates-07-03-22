@@ -1,0 +1,73 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+// Usage: @include small-screens{}
+@mixin small-screens {
+	@media only screen and (max-width: #{$mobile}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include mobile{}
+@mixin mobile {
+	@media only screen and (min-width: #{$mobile}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include mobile-tablet{}
+@mixin mobile-tablet {
+	@media only screen and (min-width: #{$mobile}#{$unit}) and (max-width: #{$tablet}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include tablet{}
+@mixin tablet {
+	@media only screen and (min-width: #{$tablet}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include tablet-laptop{}
+@mixin tablet-laptop {
+	@media only screen and (min-width: #{$tablet}#{$unit}) and (max-width: #{$laptop}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include laptop{}
+@mixin laptop {
+	@media only screen and (min-width: #{$laptop}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include laptop-desktop{}
+@mixin laptop-desktop {
+	@media only screen and (min-width: #{$laptop}#{$unit}) and (max-width: #{$desktop}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include desktop{}
+@mixin desktop {
+	@media only screen and (min-width: #{$desktop}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include desktop-bigscreen{}
+@mixin desktop-bigscreen {
+	@media only screen and (min-width: #{$desktop}#{$unit}) and (max-width: #{$bigscreen}#{$unit}) {
+		@content;
+	}
+}
+
+// Usage: @include big-screens{}
+@mixin big-screens {
+	@media only screen and (min-width: #{$bigscreen}#{$unit}) {
+		@content;
+	}
+}

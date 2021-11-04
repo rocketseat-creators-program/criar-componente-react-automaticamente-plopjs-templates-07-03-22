@@ -1,0 +1,9 @@
+.item-list {
+	padding-left: 0;
+}
+
+.item-list__item {
+	list-style: none;
+
+	@include font-icon('fas', 'before', '\f621', unset, unset, unset, unset);
+}

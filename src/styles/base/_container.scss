@@ -1,0 +1,21 @@
+/**
+  * important: This is a core styles and it should never change.
+  */
+
+.theme-container {
+	margin: 0 auto;
+	max-width: #{$mobileContainer};
+
+	@include tablet {
+		max-width: #{$tabletContainer};
+		width: 100%;
+	}
+
+	@include laptop {
+		max-width: #{$laptopContainer};
+	}
+
+	@include desktop {
+		max-width: #{$desktopContainer};
+	}
+}
