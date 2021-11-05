@@ -5,6 +5,7 @@ import {ReactElement, ReactNode} from 'react';
 import '@app/styles/main.scss';
 
 type NextPageWithLayout = NextPage & {
+	// eslint-disable-next-line no-unused-vars
 	getLayout?: (page: ReactElement) => ReactNode;
 };
 
