@@ -10,8 +10,6 @@ You can find all the information you need in the documentation we prepared with 
 https://brandalley.atlassian.net/wiki/spaces/PWA/pages/1907228709/Project+Documentation
 
 
----
-
 ## Running App Locally
 
 1. Clone repository
@@ -28,8 +26,6 @@ https://brandalley.atlassian.net/wiki/spaces/PWA/pages/1907228709/Project+Docume
    
 *P.S.: The PWA is disallowed for dev*
 
----
-
 ## Running Production
 
 1. Run build
@@ -43,8 +39,6 @@ https://brandalley.atlassian.net/wiki/spaces/PWA/pages/1907228709/Project+Docume
 	```
 
 3. Access <http://localhost:3000/>
-
----
 
 ## Testing PWA
 
