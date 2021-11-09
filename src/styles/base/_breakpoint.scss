@@ -58,8 +58,8 @@
 	}
 }
 
-// Usage: @include desktop-bigscreen{}
-@mixin desktop-bigscreen {
+// Usage: @include desktop-big-screen{}
+@mixin desktop-big-screen {
 	@media only screen and (min-width: #{$desktop}#{$unit}) and (max-width: #{$bigscreen}#{$unit}) {
 		@content;
 	}
