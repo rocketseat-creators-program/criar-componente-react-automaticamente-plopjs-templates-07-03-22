@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingCmsPage from '@app/components/Loading/LoadingCmsPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {CmsPagesSeo} from '@app/pages/cms/CmsPagesSeo.config';
 
 export interface CmsPageParams extends ParsedUrlQuery {
 	cmsUrlKey: string;
@@ -44,7 +45,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const CmsPage = ({cmsUrlKey}: CmsPageParams) => {
 	const {isFallback} = useRouter();
-	return isFallback ? <LoadingCmsPage /> : <p>CMS URL Key: {cmsUrlKey}</p>;
+	return isFallback ? (
+		<LoadingCmsPage />
+	) : (
+		<>
+			<p>CMS URL Key: {cmsUrlKey}</p>
+			<CmsPagesSeo />
+		</>
+	);
 };
 
 CmsPage.getLayout = (page: ReactElement) => {

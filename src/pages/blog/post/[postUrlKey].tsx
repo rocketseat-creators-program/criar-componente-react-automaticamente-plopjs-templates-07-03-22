@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPostPage from '@app/components/Loading/LoadingBlogPostPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {PostPageSeo} from '@app/pages/blog/post/PostPageSeo.config';
 
 export interface BlogPostPageParams extends ParsedUrlQuery {
 	postUrlKey: string;
@@ -44,7 +45,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const BlogPostPage = ({postUrlKey}: BlogPostPageParams) => {
 	const {isFallback} = useRouter();
-	return isFallback ? <LoadingBlogPostPage /> : <p>Blog Post URL Key: {postUrlKey}</p>;
+	return isFallback ? (
+		<LoadingBlogPostPage />
+	) : (
+		<>
+			<p>Blog Post URL Key: {postUrlKey}</p>
+			<PostPageSeo />
+		</>
+	);
 };
 
 BlogPostPage.getLayout = (page: ReactElement) => {

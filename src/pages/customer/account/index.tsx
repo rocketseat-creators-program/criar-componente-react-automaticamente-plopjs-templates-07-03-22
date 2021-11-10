@@ -1,8 +1,14 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {AccountSeo} from '@app/pages/customer/account/AccountSeo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerAccountPage = () => {
-	return <p>Welcome to the customer accoutn page!</p>;
+	return (
+		<>
+			<p>Welcome to the customer accoutn page!</p>
+			<AccountSeo />
+		</>
+	);
 };
 
 CustomerAccountPage.getLayout = (page: ReactElement) => {

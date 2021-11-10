@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPage from '@app/components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {BlogCategorySeo} from '@app/pages/blog/[categoryUrlKey]/BlogCategorySeo.config';
 
 export interface BlogCategoryPageParams extends ParsedUrlQuery {
 	categoryUrlKey: string;
@@ -44,7 +45,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const BlogCategoryPage = ({categoryUrlKey}: BlogCategoryPageParams) => {
 	const {isFallback} = useRouter();
-	return isFallback ? <LoadingBlogPage /> : <p>Blog Category URL Key: {categoryUrlKey}</p>;
+	return isFallback ? (
+		<LoadingBlogPage />
+	) : (
+		<>
+			<p>Blog Category URL Key: {categoryUrlKey}</p>
+			<BlogCategorySeo />
+		</>
+	);
 };
 
 BlogCategoryPage.getLayout = (page: ReactElement) => {

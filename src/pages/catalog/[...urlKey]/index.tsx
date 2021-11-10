@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingCatalogCategoryPage from '@app/components/Loading/LoadingCatalogCategoryPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {CatalogSeo} from '@app/pages/catalog/CatalogSeo.config';
 
 export interface CatalogCategoryPageProps {
 	category: string;
@@ -38,7 +39,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const revalidationTime: number = Number(process.env.REACT_APP_DATA_REVALIDATION_TIME);
 	const categoryPath = urlKey.toString().split(',').join('/');
 	const category = topCategoryUrlKey.includes(categoryPath); // get from API
-	console.log('categoryPath', categoryPath);
 
 	if (!category) return {notFound: true};
 
@@ -57,13 +57,16 @@ const CatalogCategoryPage = ({category, subcategory, subsubcategory}: CatalogCat
 	return isFallback ? (
 		<LoadingCatalogCategoryPage />
 	) : (
-		<div>
-			<p>Category URL Key: {category}</p>
-			{subcategory && <p>Subcategory URL Key: {`${category}/${subcategory}`}</p>}
-			{subsubcategory && (
-				<p>Sub-subcategory URL Key: {`${category}/${subcategory}/${subsubcategory}`}</p>
-			)}
-		</div>
+		<>
+			<div>
+				<p>Category URL Key: {category}</p>
+				{subcategory && <p>Subcategory URL Key: {`${category}/${subcategory}`}</p>}
+				{subsubcategory && (
+					<p>Sub-subcategory URL Key: {`${category}/${subcategory}/${subsubcategory}`}</p>
+				)}
+			</div>
+			<CatalogSeo />
+		</>
 	);
 };
 

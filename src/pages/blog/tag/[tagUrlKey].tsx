@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPage from '@app/components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {TagPageSeo} from '@app/pages/blog/tag/TagPageSeo.config';
 
 export interface BlogTagPageParams extends ParsedUrlQuery {
 	tagUrlKey: string;
@@ -44,7 +45,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const BlogTagPage = ({tagUrlKey}: BlogTagPageParams) => {
 	const {isFallback} = useRouter();
-	return isFallback ? <LoadingBlogPage /> : <p>Blog Tag URL Key: {tagUrlKey}</p>;
+	return isFallback ? (
+		<LoadingBlogPage />
+	) : (
+		<>
+			<p>Blog Tag URL Key: {tagUrlKey}</p>
+			<TagPageSeo />
+		</>
+	);
 };
 
 BlogTagPage.getLayout = (page: ReactElement) => {

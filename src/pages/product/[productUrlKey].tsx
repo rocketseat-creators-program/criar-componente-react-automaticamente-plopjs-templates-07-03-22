@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingProductPage from '@app/components/Loading/LoadingProductPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
+import {ProductSeo} from '@app/pages/product/ProductSeo.config';
 
 // Temporary, this will be deleted as soon as we have a store action doing it.
 const getProduct = async (key: string) =>
@@ -47,7 +48,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const ProductPage = ({productUrlKey}: ProductPageParams) => {
 	const {isFallback} = useRouter();
-	return isFallback ? <LoadingProductPage /> : <p>Product URL Key: {productUrlKey}</p>;
+	return isFallback ? (
+		<LoadingProductPage />
+	) : (
+		<>
+			<p>Product URL Key: {productUrlKey}</p>
+			<ProductSeo />
+		</>
+	);
 };
 
 ProductPage.getLayout = (page: ReactElement) => {
