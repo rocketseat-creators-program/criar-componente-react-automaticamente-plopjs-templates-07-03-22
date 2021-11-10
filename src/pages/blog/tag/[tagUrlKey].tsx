@@ -13,8 +13,9 @@ export interface BlogTagPagePaths {
 	params: BlogTagPageParams;
 }
 
+const topTagUrlKey: string[] = ['testing', 'bacon'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topTagUrlKey: string[] = ['testing', 'bacon'];
 	const paths: BlogTagPagePaths[] = topTagUrlKey.map((tagUrlKey: string) => ({
 		params: {
 			tagUrlKey,
@@ -29,6 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {tagUrlKey} = context.params as BlogTagPageParams;
 	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const tag = topTagUrlKey.includes(tagUrlKey); // get from API
+
+	if (!tag) return {notFound: true};
 
 	return {
 		props: {

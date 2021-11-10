@@ -19,8 +19,9 @@ export interface CatalogCategoryPagePaths {
 	params: CatalogCategoryPageParams;
 }
 
+const topCategoryUrlKey: string[] = ['testing', 'testing/bacon', 'testing/bacon/american'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topCategoryUrlKey: string[] = ['testing', 'testing/bacon', 'testing/bacon/american'];
 	const paths: CatalogCategoryPagePaths[] = topCategoryUrlKey.map((urlKey: string) => ({
 		params: {
 			urlKey: [urlKey],
@@ -35,6 +36,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {urlKey} = context.params as CatalogCategoryPageParams;
 	const revalidationTime: number = Number(process.env.REACT_APP_DATA_REVALIDATION_TIME);
+	const categoryPath = urlKey.toString().split(',').join('/');
+	const category = topCategoryUrlKey.includes(categoryPath); // get from API
+	console.log('categoryPath', categoryPath);
+
+	if (!category) return {notFound: true};
 
 	return {
 		props: {

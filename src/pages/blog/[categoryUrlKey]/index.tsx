@@ -13,8 +13,9 @@ export interface BlogCategoryPagePaths {
 	params: BlogCategoryPageParams;
 }
 
+const topCateforyUrlKey: string[] = ['testing', 'bacon'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topCateforyUrlKey: string[] = ['testing', 'bacon'];
 	const paths: BlogCategoryPagePaths[] = topCateforyUrlKey.map((categoryUrlKey: string) => ({
 		params: {
 			categoryUrlKey,
@@ -29,6 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {categoryUrlKey} = context.params as BlogCategoryPageParams;
 	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const category = topCateforyUrlKey.includes(categoryUrlKey); // get from API
+
+	if (!category) return {notFound: true};
 
 	return {
 		props: {

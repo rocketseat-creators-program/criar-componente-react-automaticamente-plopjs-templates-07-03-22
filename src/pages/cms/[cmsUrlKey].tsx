@@ -13,8 +13,9 @@ export interface CmsPagePaths {
 	params: CmsPageParams;
 }
 
+const topCmsUrlKey: string[] = ['testing', 'bacon'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topCmsUrlKey: string[] = ['testing', 'bacon'];
 	const paths: CmsPagePaths[] = topCmsUrlKey.map((cmsUrlKey: string) => ({
 		params: {
 			cmsUrlKey,
@@ -29,6 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {cmsUrlKey} = context.params as CmsPageParams;
 	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const cmsPath = topCmsUrlKey.includes(cmsUrlKey); // get from API
+
+	if (!cmsPath) return {notFound: true};
 
 	return {
 		props: {

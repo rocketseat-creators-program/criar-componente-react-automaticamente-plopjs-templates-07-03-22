@@ -13,8 +13,9 @@ export interface BlogPostPagePaths {
 	params: BlogPostPageParams;
 }
 
+const topPostUrlKey: string[] = ['testing', 'bacon'];
+
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topPostUrlKey: string[] = ['testing', 'bacon'];
 	const paths: BlogPostPagePaths[] = topPostUrlKey.map((postUrlKey: string) => ({
 		params: {
 			postUrlKey,
@@ -29,6 +30,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {postUrlKey} = context.params as BlogPostPageParams;
 	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const post = topPostUrlKey.includes(postUrlKey); // get from API
+
+	if (!post) return {notFound: true};
 
 	return {
 		props: {

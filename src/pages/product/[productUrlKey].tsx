@@ -6,7 +6,8 @@ import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
 
 // Temporary, this will be deleted as soon as we have a store action doing it.
-const getProduct = async (key: string) => (key !== 'testing' && key !== 'bacon' ? false : true);
+const getProduct = async (key: string) =>
+	key !== 'testing' && key !== 'bacon' && key !== 'cheese' ? false : true;
 
 export interface ProductPageParams extends ParsedUrlQuery {
 	productUrlKey: string;
@@ -17,7 +18,7 @@ export interface ProductPagePaths {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const topProductsUrlKey: string[] = await delay(100, ['testing', 'bacon']);
+	const topProductsUrlKey: string[] = await delay(5000, ['testing', 'bacon']);
 	const paths: ProductPagePaths[] = topProductsUrlKey.map((productUrlKey: string) => ({
 		params: {
 			productUrlKey,
