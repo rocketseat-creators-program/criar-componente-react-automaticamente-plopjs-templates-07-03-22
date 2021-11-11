@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {VouchersSeo} from '@app/pages/customer/vouchers/VouchersSeo.config';
-import {useRouter} from 'next/router';
+import {VouchersSeo} from '@app/pages/customer/vouchers/_seo.config';
 import React, {ReactElement} from 'react';
 
 const VouchersPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the vouchers page!</p>
 			<VouchersSeo />

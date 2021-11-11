@@ -12,4 +12,5 @@ module.exports = withPWA({
 		buildExcludes: [/middleware-manifest.json$/],
 		disable: process.env.NODE_ENV === 'development',
 	},
+	pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
 });

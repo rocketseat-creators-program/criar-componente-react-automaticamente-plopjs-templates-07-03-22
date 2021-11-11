@@ -1,4 +1,4 @@
-import {Items} from '@app/pages/about';
+import {Items} from '@app/pages/about/index.page';
 import colors from '@app/styles/exports/colors.module.scss';
 
 interface ItemListProps {

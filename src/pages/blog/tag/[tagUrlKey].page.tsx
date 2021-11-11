@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPage from '@app/components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {TagPageSeo} from '@app/pages/blog/tag/TagPageSeo.config';
+import {TagPageSeo} from '@app/pages/blog/tag/_seo.config';
 
 export interface BlogTagPageParams extends ParsedUrlQuery {
 	tagUrlKey: string;

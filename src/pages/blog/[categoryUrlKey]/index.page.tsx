@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPage from '@app/components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {BlogCategorySeo} from '@app/pages/blog/[categoryUrlKey]/BlogCategorySeo.config';
+import {BlogCategorySeo} from '@app/pages/blog/[categoryUrlKey]/_seo.config';
 
 export interface BlogCategoryPageParams extends ParsedUrlQuery {
 	categoryUrlKey: string;

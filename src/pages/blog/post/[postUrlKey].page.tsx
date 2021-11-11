@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingBlogPostPage from '@app/components/Loading/LoadingBlogPostPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {PostPageSeo} from '@app/pages/blog/post/PostPageSeo.config';
+import {PostPageSeo} from '@app/pages/blog/post/_seo.config';
 
 export interface BlogPostPageParams extends ParsedUrlQuery {
 	postUrlKey: string;

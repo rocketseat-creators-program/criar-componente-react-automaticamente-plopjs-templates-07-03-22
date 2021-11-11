@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {BlogHomeSeo} from '@app/pages/blog/BlogHomeSeo.config';
-import {useRouter} from 'next/router';
+import {BlogHomeSeo} from '@app/pages/blog/_seo.config';
 import React, {ReactElement} from 'react';
 
 const BlogPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the blog page!</p>
 			<BlogHomeSeo />

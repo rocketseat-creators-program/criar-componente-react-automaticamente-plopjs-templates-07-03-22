@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {EmailPreferencesSeo} from '@app/pages/customer/email-preferences/EmailPreferencesSeo.config';
-import {useRouter} from 'next/router';
+import {EmailPreferencesSeo} from '@app/pages/customer/email-preferences/_seo.config';
 import React, {ReactElement} from 'react';
 
 const EmailPreferencesPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the email preferences page!</p>
 			<EmailPreferencesSeo />

@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingCmsPage from '@app/components/Loading/LoadingCmsPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CmsPagesSeo} from '@app/pages/cms/CmsPagesSeo.config';
+import {CmsPagesSeo} from '@app/pages/cms/_seo.config';
 
 export interface CmsPageParams extends ParsedUrlQuery {
 	cmsUrlKey: string;

@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {GiftCardsSeo} from '@app/pages/customer/gift-cards/GiftCardsSeo.config';
-import {useRouter} from 'next/router';
+import {GiftCardsSeo} from '@app/pages/customer/gift-cards/_seo.config';
 import React, {ReactElement} from 'react';
 
 const GiftCardsPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the gift cards page!</p>
 			<GiftCardsSeo />

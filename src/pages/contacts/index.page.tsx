@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {ContactsSeo} from '@app/pages/contacts/ContactsSeo.config';
-import {useRouter} from 'next/router';
+import {ContactsSeo} from '@app/pages/contacts/_seo.config';
 import React, {ReactElement} from 'react';
 
 const ContactsPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the contact page!</p>
 			<ContactsSeo />

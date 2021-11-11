@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {EditAccountSeo} from '@app/pages/customer/account/edit/EditAccountSeo.config';
-import {useRouter} from 'next/router';
+import {EditAccountSeo} from '@app/pages/customer/account/edit/_seo.config';
 import React, {ReactElement} from 'react';
 
 const EditCustomerAccountPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the edit customer accoutn page!</p>
 			<EditAccountSeo />

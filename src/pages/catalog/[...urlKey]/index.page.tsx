@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingCatalogCategoryPage from '@app/components/Loading/LoadingCatalogCategoryPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CatalogSeo} from '@app/pages/catalog/CatalogSeo.config';
+import {CatalogSeo} from '@app/pages/catalog/_seo.config';
 
 export interface CatalogCategoryPageProps {
 	category: string;

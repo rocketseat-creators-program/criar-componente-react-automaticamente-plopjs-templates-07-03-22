@@ -1,13 +1,9 @@
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CustomerAddressSeo} from '@app/pages/customer/address/CustomerAddressSeo.config';
-import {useRouter} from 'next/router';
+import {CustomerAddressSeo} from '@app/pages/customer/address/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerAddressPage = () => {
-	const {isFallback} = useRouter();
-	return isFallback ? (
-		<p>Loading...</p>
-	) : (
+	return (
 		<>
 			<p>Welcome to the customer address page!</p>
 			<CustomerAddressSeo />

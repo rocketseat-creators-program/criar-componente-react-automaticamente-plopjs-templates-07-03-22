@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import LoadingProductPage from '@app/components/Loading/LoadingProductPage';
 import React, {ReactElement} from 'react';
 import {AppLayout} from '@app/components/Layout/AppLayout';
-import {ProductSeo} from '@app/pages/product/ProductSeo.config';
+import {ProductSeo} from '@app/pages/product/_seo.config';
 
 // Temporary, this will be deleted as soon as we have a store action doing it.
 const getProduct = async (key: string) =>
