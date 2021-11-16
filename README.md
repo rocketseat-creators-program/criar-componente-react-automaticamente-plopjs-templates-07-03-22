@@ -1,13 +1,7 @@
 
-# BrandAlley Web App
+# PWA E-commerce: Progressive web application
 
-STACK: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) | [NextJS](https://nextjs.org/docs/getting-started) | [Mobx-State-Tree](https://mobx-state-tree.js.org/intro/welcome) | [SASS](https://sass-lang.com/documentation) | [BEM Syntax](http://getbem.com/introduction/)
-
-## Best Practises & Documentation
-
-You can find all the information you need in the documentation we prepared with care to help you to develop a reusable and well-performed application. So, please, read it before starting to help us keep this application easy to maintain and performing well.
-
-https://brandalley.atlassian.net/wiki/spaces/PWA/pages/1907228709/Project+Documentation
+STACK: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) | [NextJS](https://nextjs.org/docs/getting-started) | [SASS](https://sass-lang.com/documentation) | [BEM Syntax](http://getbem.com/introduction/)
 
 
 ## Running App Locally
