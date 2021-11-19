@@ -2,7 +2,7 @@ import {NextPage} from 'next';
 import type {AppProps} from 'next/app';
 import {ReactElement, ReactNode} from 'react';
 
-import '@app/styles/main.scss';
+import 'styles/main.scss';
 
 type NextPageWithLayout = NextPage & {
 	// eslint-disable-next-line no-unused-vars

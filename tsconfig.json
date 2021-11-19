@@ -1,9 +1,12 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["dom", "dom.iterable", "esnext"],
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
 		"allowJs": true,
-		"skipLibCheck": true,
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
@@ -18,18 +21,24 @@
 		"noUnusedParameters": true,
 		"baseUrl": "./",
 		"paths": {
-			"@app/components/*": ["src/components/*"],
-			"@app/pages/*": ["src/pages/*"],
-			"@app/styles/*": ["src/styles/*"],
-			"@app/styles/exports/*": ["src/styles/exports/*"]
-		}
+			"components/*": ["src/components/*"],
+			"pages/*": ["src/pages/*"],
+			"stores/*": ["src/stores/*"],
+			"contexts/*": ["src/contexts/*"],
+			"i18n/*": ["src/i18n/*"],
+			"styles/*": ["src/styles/*"],
+			"styles/exports/*": ["src/styles/exports/*"],
+			"src/": ["src/*"]
+		},
+		"skipLibCheck": true
 	},
 	"include": [
 		"next-env.d.ts",
+		"app.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
 		"pages/**/*",
-		"src/**/*",
+		"src/**/*"
 	],
 	"exclude": [
 		"node_modules",

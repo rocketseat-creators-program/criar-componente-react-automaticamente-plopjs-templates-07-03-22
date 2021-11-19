@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {AccountLogoutSeo} from '@app/pages/customer/account/logout/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {AccountLogoutSeo} from 'pages/customer/account/logout/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerAccountLogoutPage = () => {

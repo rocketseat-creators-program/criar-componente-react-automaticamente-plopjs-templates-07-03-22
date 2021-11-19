@@ -111,7 +111,7 @@ export const PagesList = () => {
 					<Link href={`/product/${encodeURIComponent('cheese')}`}>Product Cheese Page</Link>
 				</li>
 			</ul>
-			<h4>Invalid Paths</h4>
+			{/* <h4>Invalid Paths</h4>
 			<ul>
 				<li>
 					<Link href={`/product/${encodeURIComponent('any')}`}>Product Any Page</Link>
@@ -161,7 +161,7 @@ export const PagesList = () => {
 				<li>
 					<Link href={`/blog/${encodeURIComponent('any')}`}>Blog Category Any Page</Link>
 				</li>
-			</ul>
+			</ul> */}
 		</div>
 	);
 };

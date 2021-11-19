@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {AccountLoginSeo} from '@app/pages/customer/account/login/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {AccountLoginSeo} from 'pages/customer/account/login/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerAccountLoginPage = () => {

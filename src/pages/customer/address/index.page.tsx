@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CustomerAddressSeo} from '@app/pages/customer/address/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {CustomerAddressSeo} from 'pages/customer/address/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerAddressPage = () => {

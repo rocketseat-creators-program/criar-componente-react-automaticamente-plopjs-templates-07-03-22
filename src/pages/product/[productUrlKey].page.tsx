@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
-import LoadingProductPage from '@app/components/Loading/LoadingProductPage';
+import LoadingProductPage from 'components/Loading/LoadingProductPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {ProductSeo} from '@app/pages/product/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {ProductSeo} from 'pages/product/_seo.config';
 
 // Temporary, this will be deleted as soon as we have a store action doing it.
 const getProduct = async (key: string) =>
@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {productUrlKey} = context.params as ProductPageParams;
-	const revalidationTime: number = Number(process.env.REACT_APP_DATA_REVALIDATION_TIME);
+	const revalidationTime = Number(process.env.NEXT_PUBLIC_DATA_REVALIDATION_TIME);
 	const product = await getProduct(productUrlKey);
 
 	if (!product) return {notFound: true};
@@ -62,7 +62,7 @@ ProductPage.getLayout = (page: ReactElement) => {
 	return <AppLayout>{page}</AppLayout>;
 };
 
-const delay = (delayInMs: number, toReturn: any): Promise<any> =>
+const delay = (delayInMs: number, toReturn: string[]): Promise<string[]> =>
 	new Promise((resolve) => setTimeout(() => resolve(toReturn), delayInMs));
 
 export default ProductPage;

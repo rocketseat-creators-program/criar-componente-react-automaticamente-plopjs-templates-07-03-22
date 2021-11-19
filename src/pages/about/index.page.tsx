@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import {ReactElement, useState} from 'react';
-import {ItemList} from '@app/components/ItemList/ItemList';
-import {CheckoutLayout} from '@app/components/Layout/CheckoutLayout';
+import {ItemList} from 'components/ItemList/ItemList';
+import {CheckoutLayout} from 'components/Layout/CheckoutLayout';
 
 export interface Items {
 	id: string;

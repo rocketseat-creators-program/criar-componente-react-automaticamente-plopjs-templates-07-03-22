@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {OrderHistorySeo} from '@app/pages/customer/order/history/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {OrderHistorySeo} from 'pages/customer/order/history/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CustomerOrderHistoryPage = () => {

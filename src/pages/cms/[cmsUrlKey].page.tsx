@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
-import LoadingCmsPage from '@app/components/Loading/LoadingCmsPage';
+import LoadingCmsPage from 'components/Loading/LoadingCmsPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CmsPagesSeo} from '@app/pages/cms/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {CmsPagesSeo} from 'pages/cms/_seo.config';
 
 export interface CmsPageParams extends ParsedUrlQuery {
 	cmsUrlKey: string;
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {cmsUrlKey} = context.params as CmsPageParams;
-	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const revalidationTime = Number(process.env.NEXT_PUBLIC_DEFAULT_DATA_REVALIDATION_TIME);
 	const cmsPath = topCmsUrlKey.includes(cmsUrlKey); // get from API
 
 	if (!cmsPath) return {notFound: true};

@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
-import LoadingBlogPage from '@app/components/Loading/LoadingBlogPage';
+import LoadingBlogPage from 'components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {BlogCategorySeo} from '@app/pages/blog/[categoryUrlKey]/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {BlogCategorySeo} from 'pages/blog/[categoryUrlKey]/_seo.config';
 
 export interface BlogCategoryPageParams extends ParsedUrlQuery {
 	categoryUrlKey: string;
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {categoryUrlKey} = context.params as BlogCategoryPageParams;
-	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const revalidationTime = Number(process.env.NEXT_PUBLIC_DEFAULT_DATA_REVALIDATION_TIME);
 	const category = topCateforyUrlKey.includes(categoryUrlKey); // get from API
 
 	if (!category) return {notFound: true};

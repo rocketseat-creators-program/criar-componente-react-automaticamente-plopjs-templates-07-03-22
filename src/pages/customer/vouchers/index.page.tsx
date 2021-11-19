@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {VouchersSeo} from '@app/pages/customer/vouchers/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {VouchersSeo} from 'pages/customer/vouchers/_seo.config';
 import React, {ReactElement} from 'react';
 
 const VouchersPage = () => {

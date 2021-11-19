@@ -1,8 +1,8 @@
-import type {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
+import {ReactElement} from 'react';
+import {AppLayout} from 'components/Layout/AppLayout';
 import Link from 'next/link';
 import React from 'react';
-import {PagesList} from '@app/components/PagesList/PagesList';
+import {PagesList} from 'components/PagesList/PagesList';
 import {NextSeo} from 'next-seo';
 
 const Page = () => {

@@ -1,5 +1,5 @@
-import {CheckoutLayout} from '@app/components/Layout/CheckoutLayout';
-import {CheckoutOnestepSeo} from '@app/pages/checkout/onestep/_seo.config';
+import {CheckoutLayout} from 'components/Layout/CheckoutLayout';
+import {CheckoutOnestepSeo} from 'pages/checkout/onestep/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CheckoutOnestepPage = () => {

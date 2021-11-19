@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {ContactsSeo} from '@app/pages/contacts/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {ContactsSeo} from 'pages/contacts/_seo.config';
 import React, {ReactElement} from 'react';
 
 const ContactsPage = () => {

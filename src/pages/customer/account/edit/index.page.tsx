@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {EditAccountSeo} from '@app/pages/customer/account/edit/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {EditAccountSeo} from 'pages/customer/account/edit/_seo.config';
 import React, {ReactElement} from 'react';
 
 const EditCustomerAccountPage = () => {

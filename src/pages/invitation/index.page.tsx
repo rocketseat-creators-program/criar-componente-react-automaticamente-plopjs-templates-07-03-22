@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {InvitationSeo} from '@app/pages/invitation/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {InvitationSeo} from 'pages/invitation/_seo.config';
 import React, {ReactElement} from 'react';
 
 const InvitationPage = () => {

@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {BlogHomeSeo} from '@app/pages/blog/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {BlogHomeSeo} from 'pages/blog/_seo.config';
 import React, {ReactElement} from 'react';
 
 const BlogPage = () => {

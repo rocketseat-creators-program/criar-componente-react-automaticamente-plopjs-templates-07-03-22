@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
-import LoadingBlogPostPage from '@app/components/Loading/LoadingBlogPostPage';
+import LoadingBlogPostPage from 'components/Loading/LoadingBlogPostPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {PostPageSeo} from '@app/pages/blog/post/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {PostPageSeo} from 'pages/blog/post/_seo.config';
 
 export interface BlogPostPageParams extends ParsedUrlQuery {
 	postUrlKey: string;
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {postUrlKey} = context.params as BlogPostPageParams;
-	const revalidationTime: number = Number(process.env.REACT_APP_DEFAULT_DATA_REVALIDATION_TIME);
+	const revalidationTime = Number(process.env.NEXT_PUBLIC_DEFAULT_DATA_REVALIDATION_TIME);
 	const post = topPostUrlKey.includes(postUrlKey); // get from API
 
 	if (!post) return {notFound: true};

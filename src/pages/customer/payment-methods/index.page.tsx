@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {PaymentMethodsSeo} from '@app/pages/customer/payment-methods/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {PaymentMethodsSeo} from 'pages/customer/payment-methods/_seo.config';
 import React, {ReactElement} from 'react';
 
 const PaymentMethodsPage = () => {

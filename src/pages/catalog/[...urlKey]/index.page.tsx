@@ -1,10 +1,10 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
-import LoadingCatalogCategoryPage from '@app/components/Loading/LoadingCatalogCategoryPage';
+import LoadingCatalogCategoryPage from 'components/Loading/LoadingCatalogCategoryPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {CatalogSeo} from '@app/pages/catalog/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {CatalogSeo} from 'pages/catalog/_seo.config';
 
 export interface CatalogCategoryPageProps {
 	category: string;
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const {urlKey} = context.params as CatalogCategoryPageParams;
-	const revalidationTime: number = Number(process.env.REACT_APP_DATA_REVALIDATION_TIME);
+	const revalidationTime = Number(process.env.NEXT_PUBLIC_DATA_REVALIDATION_TIME);
 	const categoryPath = urlKey.toString().split(',').join('/');
 	const category = topCategoryUrlKey.includes(categoryPath); // get from API
 

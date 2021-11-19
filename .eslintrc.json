@@ -1,12 +1,19 @@
 {
-	"extends": "next/core-web-vitals",
+	"extends": [
+		"next/core-web-vitals",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint"],
+	"ignorePatterns": ["node_modules"],
 	"rules": {
 		"quotes": ["error", "single"],
 		"no-console": "warn",
-		"no-unused-vars": "warn",
+		"no-unused-vars": "off",
 		"@typescript-eslint/no-unused-vars": [
-			"error",
+			"warn",
 			{
 				"vars": "all",
 				"args": "after-used",

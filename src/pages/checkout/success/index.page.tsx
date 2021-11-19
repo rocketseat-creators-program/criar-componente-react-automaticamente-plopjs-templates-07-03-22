@@ -1,5 +1,5 @@
-import {CheckoutLayout} from '@app/components/Layout/CheckoutLayout';
-import {CheckoutSuccessSeo} from '@app/pages/checkout/success/_seo.config';
+import {CheckoutLayout} from 'components/Layout/CheckoutLayout';
+import {CheckoutSuccessSeo} from 'pages/checkout/success/_seo.config';
 import React, {ReactElement} from 'react';
 
 const CheckoutSuccessPage = () => {

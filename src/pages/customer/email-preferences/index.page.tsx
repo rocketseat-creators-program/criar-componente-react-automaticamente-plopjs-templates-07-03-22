@@ -1,5 +1,5 @@
-import {AppLayout} from '@app/components/Layout/AppLayout';
-import {EmailPreferencesSeo} from '@app/pages/customer/email-preferences/_seo.config';
+import {AppLayout} from 'components/Layout/AppLayout';
+import {EmailPreferencesSeo} from 'pages/customer/email-preferences/_seo.config';
 import React, {ReactElement} from 'react';
 
 const EmailPreferencesPage = () => {
