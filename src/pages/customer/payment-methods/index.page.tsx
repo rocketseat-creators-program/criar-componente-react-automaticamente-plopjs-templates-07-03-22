@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const PaymentMethodsPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the payment methods page!</p>
 			<PaymentMethodsSeo />
 		</>

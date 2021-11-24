@@ -49,6 +49,7 @@ const CmsPage = ({cmsUrlKey}: CmsPageParams) => {
 		<LoadingCmsPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<p>CMS URL Key: {cmsUrlKey}</p>
 			<CmsPagesSeo />
 		</>

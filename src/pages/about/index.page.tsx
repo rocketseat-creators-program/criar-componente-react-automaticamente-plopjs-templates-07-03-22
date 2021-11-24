@@ -18,6 +18,7 @@ const About = () => {
 
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>ABOUT US TESTING!!!</p>
 			<ItemList items={itemsList} />
 			<Link href="/">{'<< Back'}</Link>

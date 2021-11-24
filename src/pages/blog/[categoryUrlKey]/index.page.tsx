@@ -49,6 +49,7 @@ const BlogCategoryPage = ({categoryUrlKey}: BlogCategoryPageParams) => {
 		<LoadingBlogPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<p>Blog Category URL Key: {categoryUrlKey}</p>
 			<BlogCategorySeo />
 		</>

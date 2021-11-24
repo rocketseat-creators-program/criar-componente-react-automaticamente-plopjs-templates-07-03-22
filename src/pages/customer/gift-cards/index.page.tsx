@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const GiftCardsPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the gift cards page!</p>
 			<GiftCardsSeo />
 		</>

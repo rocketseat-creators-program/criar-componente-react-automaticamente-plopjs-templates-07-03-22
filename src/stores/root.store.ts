@@ -1,13 +1,9 @@
 import { applySnapshot, getSnapshot, Instance, types } from 'mobx-state-tree';
-import { LanguageStore, AvailableLanguages } from '@brandalley/smk';
+import { LanguageStore } from '@brandalley/smk';
 import store from 'store';
-import { availableLanguages } from 'i18n/index';
+import { laguageInitialState } from 'stores/language.store';
 
-const languageStore = LanguageStore.create({
-	languages: availableLanguages,
-	currentLanguage: process.env
-		.NEXT_PUBLIC_DEFAULT_LANGUAGE as typeof AvailableLanguages,
-});
+const languageStore = LanguageStore.create(laguageInitialState);
 
 export const RootStore = types
 	.model('RootStore', {

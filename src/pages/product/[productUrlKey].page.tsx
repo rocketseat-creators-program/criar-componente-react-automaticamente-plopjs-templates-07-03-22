@@ -52,6 +52,7 @@ const ProductPage = ({productUrlKey}: ProductPageParams) => {
 		<LoadingProductPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<p>Product URL Key: {productUrlKey}</p>
 			<ProductSeo />
 		</>

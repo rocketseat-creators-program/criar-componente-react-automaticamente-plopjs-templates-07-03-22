@@ -49,6 +49,7 @@ const BlogTagPage = ({tagUrlKey}: BlogTagPageParams) => {
 		<LoadingBlogPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<p>Blog Tag URL Key: {tagUrlKey}</p>
 			<TagPageSeo />
 		</>

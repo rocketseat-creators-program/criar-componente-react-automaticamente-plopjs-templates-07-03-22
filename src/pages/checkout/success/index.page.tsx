@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const CheckoutSuccessPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the checkout success page!</p>
 			<CheckoutSuccessSeo />
 		</>

@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"target": "es5",
 		"lib": [
+			"es5",
 			"dom",
 			"dom.iterable",
 			"esnext"
@@ -30,7 +31,9 @@
 			"styles/exports/*": ["src/styles/exports/*"],
 			"src/": ["src/*"]
 		},
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"typeRoots": ["node_modules/@types"],
+		"types": ["jest", "cypress", "node"]
 	},
 	"include": [
 		"next-env.d.ts",
@@ -38,13 +41,13 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"pages/**/*",
-		"src/**/*"
+		"src/**/*",
+		"node_modules/cypress",
+		"cypress/*/*.ts"
 	],
 	"exclude": [
 		"node_modules",
 		"public",
-		"**/*.spec.ts",
-		"**/*.spec.tsx",
 		"**/*.test.ts",
 		"**/*.test.tsx"
 	]

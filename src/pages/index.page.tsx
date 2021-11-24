@@ -4,12 +4,18 @@ import Link from 'next/link';
 import React from 'react';
 import {PagesList} from 'components/PagesList/PagesList';
 import {NextSeo} from 'next-seo';
+import {useStore} from 'contexts/store.context';
 
 const Page = () => {
+	const {
+		language: {currentLanguage},
+	} = useStore();
+
 	return (
 		<>
 			<h1>Hello world!</h1>
 			<Link href="/about">About Page</Link>
+			<p>current language: {currentLanguage}</p>
 			<hr />
 			<PagesList />
 			<NextSeo

@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const CheckoutOnestepPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the checkout onestep page!</p>
 			<CheckoutOnestepSeo />
 		</>

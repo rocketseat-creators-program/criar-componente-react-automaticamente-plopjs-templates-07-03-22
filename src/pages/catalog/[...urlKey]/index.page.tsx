@@ -58,6 +58,7 @@ const CatalogCategoryPage = ({category, subcategory, subsubcategory}: CatalogCat
 		<LoadingCatalogCategoryPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<div>
 				<p>Category URL Key: {category}</p>
 				{subcategory && <p>Subcategory URL Key: {`${category}/${subcategory}`}</p>}

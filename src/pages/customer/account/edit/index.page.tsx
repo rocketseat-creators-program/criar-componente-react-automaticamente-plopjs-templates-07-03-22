@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const EditCustomerAccountPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the edit customer accoutn page!</p>
 			<EditAccountSeo />
 		</>

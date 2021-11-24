@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const CustomerAddressPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the customer address page!</p>
 			<CustomerAddressSeo />
 		</>

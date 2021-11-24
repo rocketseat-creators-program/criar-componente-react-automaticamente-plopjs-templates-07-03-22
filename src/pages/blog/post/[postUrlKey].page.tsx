@@ -49,6 +49,7 @@ const BlogPostPage = ({postUrlKey}: BlogPostPageParams) => {
 		<LoadingBlogPostPage />
 	) : (
 		<>
+			<h1>Hello world!</h1>
 			<p>Blog Post URL Key: {postUrlKey}</p>
 			<PostPageSeo />
 		</>

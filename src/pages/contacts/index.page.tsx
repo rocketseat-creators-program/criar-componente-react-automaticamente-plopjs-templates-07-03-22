@@ -5,6 +5,7 @@ import React, {ReactElement} from 'react';
 const ContactsPage = () => {
 	return (
 		<>
+			<h1>Hello world!</h1>
 			<p>Welcome to the contact page!</p>
 			<ContactsSeo />
 		</>

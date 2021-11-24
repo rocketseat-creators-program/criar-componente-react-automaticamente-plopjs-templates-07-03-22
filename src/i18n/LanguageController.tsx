@@ -5,9 +5,8 @@ interface LanguagesControllerProps {
 	children: ReactNode;
 }
 
-const LanguageController = (props: LanguagesControllerProps) => {
+const LanguageController = ({children}: LanguagesControllerProps) => {
 	const {setLanguage, currentLanguage} = useTranslate();
-	const {children} = props;
 
 	useEffect(() => {
 		setLanguage(currentLanguage);
