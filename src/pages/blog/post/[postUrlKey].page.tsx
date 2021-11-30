@@ -3,7 +3,7 @@ import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
 import LoadingBlogPostPage from 'components/Loading/LoadingBlogPostPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {PostPageSeo} from 'pages/blog/post/_seo.config';
 
 export interface BlogPostPageParams extends ParsedUrlQuery {
@@ -57,7 +57,7 @@ const BlogPostPage = ({postUrlKey}: BlogPostPageParams) => {
 };
 
 BlogPostPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default BlogPostPage;

@@ -1,4 +1,4 @@
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {EmailPreferencesSeo} from 'pages/customer/email-preferences/_seo.config';
 import React, {ReactElement} from 'react';
 
@@ -13,7 +13,7 @@ const EmailPreferencesPage = () => {
 };
 
 EmailPreferencesPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default EmailPreferencesPage;

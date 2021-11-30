@@ -1,1 +1,5 @@
-export const fr = {};
+export const fr = {
+	header: {
+		title: 'En-tête statique',
+	},
+};

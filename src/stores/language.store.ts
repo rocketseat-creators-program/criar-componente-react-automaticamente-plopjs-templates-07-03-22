@@ -1,8 +1,8 @@
 import { AvailableLanguages } from '@brandalley/smk';
 import { availableLanguages } from 'i18n/index';
 
-export const laguageInitialState = {
+export const laguageInitialState: any = {
 	languages: availableLanguages,
 	currentLanguage: process.env
-		.NEXT_PUBLIC_DEFAULT_LANGUAGE as typeof AvailableLanguages,
+		.NEXT_PUBLIC_DEFAULT_LANGUAGE as AvailableLanguages,
 };

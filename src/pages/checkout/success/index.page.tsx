@@ -1,4 +1,4 @@
-import {CheckoutLayout} from 'components/Layout/CheckoutLayout';
+import {CheckoutLayout} from 'components/Layout/Checkout/Layout';
 import {CheckoutSuccessSeo} from 'pages/checkout/success/_seo.config';
 import React, {ReactElement} from 'react';
 

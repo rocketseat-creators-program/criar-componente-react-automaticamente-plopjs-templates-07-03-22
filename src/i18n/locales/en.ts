@@ -1,1 +1,5 @@
-export const en = {};
+export const en = {
+	header: {
+		title: 'Static Header',
+	},
+};

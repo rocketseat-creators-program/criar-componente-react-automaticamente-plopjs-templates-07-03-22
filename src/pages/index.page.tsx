@@ -1,21 +1,17 @@
 import {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import Link from 'next/link';
 import React from 'react';
 import {PagesList} from 'components/PagesList/PagesList';
 import {NextSeo} from 'next-seo';
-import {useStore} from 'contexts/store.context';
+import {LanguageSelector} from 'i18n/LanguageSelector.component';
 
 const Page = () => {
-	const {
-		language: {currentLanguage},
-	} = useStore();
-
 	return (
 		<>
 			<h1>Hello world!</h1>
 			<Link href="/about">About Page</Link>
-			<p>current language: {currentLanguage}</p>
+			<LanguageSelector />
 			<hr />
 			<PagesList />
 			<NextSeo
@@ -56,7 +52,7 @@ const Page = () => {
 };
 
 Page.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default Page;

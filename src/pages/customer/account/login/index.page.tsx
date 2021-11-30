@@ -1,4 +1,4 @@
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {AccountLoginSeo} from 'pages/customer/account/login/_seo.config';
 import React, {ReactElement} from 'react';
 
@@ -13,7 +13,7 @@ const CustomerAccountLoginPage = () => {
 };
 
 CustomerAccountLoginPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default CustomerAccountLoginPage;

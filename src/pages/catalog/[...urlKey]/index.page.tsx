@@ -3,7 +3,7 @@ import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
 import LoadingCatalogCategoryPage from 'components/Loading/LoadingCatalogCategoryPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {CatalogSeo} from 'pages/catalog/_seo.config';
 
 export interface CatalogCategoryPageProps {
@@ -72,7 +72,7 @@ const CatalogCategoryPage = ({category, subcategory, subsubcategory}: CatalogCat
 };
 
 CatalogCategoryPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default CatalogCategoryPage;

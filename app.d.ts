@@ -1,1 +1,1 @@
-declare module '@brandalley/smk';
+import '@brandalley/smk';

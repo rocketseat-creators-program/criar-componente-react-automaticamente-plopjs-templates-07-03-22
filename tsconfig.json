@@ -43,7 +43,7 @@
 		"pages/**/*",
 		"src/**/*",
 		"node_modules/cypress",
-		"cypress/*/*.ts"
+		"cypress/*/*.ts",
 	],
 	"exclude": [
 		"node_modules",

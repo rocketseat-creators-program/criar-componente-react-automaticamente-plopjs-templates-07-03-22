@@ -3,7 +3,7 @@ import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
 import LoadingBlogPage from 'components/Loading/LoadingBlogPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {TagPageSeo} from 'pages/blog/tag/_seo.config';
 
 export interface BlogTagPageParams extends ParsedUrlQuery {
@@ -57,7 +57,7 @@ const BlogTagPage = ({tagUrlKey}: BlogTagPageParams) => {
 };
 
 BlogTagPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default BlogTagPage;

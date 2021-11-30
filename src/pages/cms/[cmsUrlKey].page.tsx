@@ -3,7 +3,7 @@ import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
 import LoadingCmsPage from 'components/Loading/LoadingCmsPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {CmsPagesSeo} from 'pages/cms/_seo.config';
 
 export interface CmsPageParams extends ParsedUrlQuery {
@@ -57,7 +57,7 @@ const CmsPage = ({cmsUrlKey}: CmsPageParams) => {
 };
 
 CmsPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default CmsPage;

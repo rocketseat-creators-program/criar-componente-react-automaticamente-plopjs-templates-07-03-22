@@ -4,9 +4,9 @@ import { Language, AvailableLanguages } from '@brandalley/smk';
 
 export interface UseTranslateProduct {
 	translate: (content: string) => string;
-	setLanguage: (languageCode: typeof AvailableLanguages) => void;
-	languages: typeof Language[];
-	currentLanguage: typeof AvailableLanguages;
+	setLanguage: (languageCode: AvailableLanguages) => void;
+	languages: Language[];
+	currentLanguage: AvailableLanguages;
 }
 
 export const useTranslate = (): UseTranslateProduct => {
@@ -17,7 +17,7 @@ export const useTranslate = (): UseTranslateProduct => {
 	const translate = (content: string) =>
 		I18n.t(content, { locale: currentLanguage });
 
-	const setLanguage = (languageCode: typeof AvailableLanguages): void =>
+	const setLanguage = (languageCode: AvailableLanguages): void =>
 		setCurrentLanguage(languageCode);
 
 	return {

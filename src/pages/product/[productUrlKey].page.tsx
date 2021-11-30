@@ -3,7 +3,7 @@ import {ParsedUrlQuery} from 'querystring';
 import {useRouter} from 'next/router';
 import LoadingProductPage from 'components/Loading/LoadingProductPage';
 import React, {ReactElement} from 'react';
-import {AppLayout} from 'components/Layout/AppLayout';
+import {DefaultLayout} from 'components/Layout/Default/Layout';
 import {ProductSeo} from 'pages/product/_seo.config';
 
 // Temporary, this will be deleted as soon as we have a store action doing it.
@@ -60,7 +60,7 @@ const ProductPage = ({productUrlKey}: ProductPageParams) => {
 };
 
 ProductPage.getLayout = (page: ReactElement) => {
-	return <AppLayout>{page}</AppLayout>;
+	return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 const delay = (delayInMs: number, toReturn: string[]): Promise<string[]> =>
