@@ -4,6 +4,7 @@ import store from 'store';
 import { laguageInitialState } from 'stores/language.store';
 
 const languageStore = LanguageStore.create(laguageInitialState);
+export type LanguageStoreType = Instance<typeof LanguageStore>;
 
 export const RootStore = types
 	.model('RootStore', {

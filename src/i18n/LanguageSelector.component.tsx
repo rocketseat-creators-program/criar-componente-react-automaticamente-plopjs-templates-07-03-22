@@ -28,7 +28,7 @@ export const LanguageSelector = observer(() => {
 	);
 
 	return (
-		<>
+		<div data-testid="select-language">
 			<p className="language-selector__current">current language: {currentLanguage}</p>
 			<Select
 				name="languageSelector"
@@ -44,6 +44,6 @@ export const LanguageSelector = observer(() => {
 				isRtl={false}
 				isSearchable={false}
 			/>
-		</>
+		</div>
 	);
 });

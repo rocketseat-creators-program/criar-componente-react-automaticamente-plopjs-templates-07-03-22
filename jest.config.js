@@ -28,6 +28,7 @@ module.exports = {
 		'<rootDir>/.next/',
 		'<rootDir>/.yalc/',
 		'<rootDir>/cypress/',
+		'<rootDir>/__mocks__',
 	],
 	transform: {
 		/* Use babel-jest to transpile tests with the next/babel preset
