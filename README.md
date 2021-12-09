@@ -1,7 +1,7 @@
 
 # PWA E-commerce: Progressive web application
 
-STACK: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) | [NextJS](https://nextjs.org/docs/getting-started) | [Mobx-State-Tree](https://mobx-state-tree.js.org/intro/welcome) | [SASS](https://sass-lang.com/documentation) | [BEM Syntax](http://getbem.com/introduction/)
+STACK: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) | [NextJS](https://nextjs.org/docs/getting-started) | [Mobx-State-Tree](https://mobx-state-tree.js.org/intro/welcome) | [SASS](https://sass-lang.com/documentation) | [BEM Syntax](http://getbem.com/introduction/) | [Jest](https://jestjs.io/docs/getting-started) | [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | [Cypress](https://docs.cypress.io/)
 
 ## Running App Locally
 
