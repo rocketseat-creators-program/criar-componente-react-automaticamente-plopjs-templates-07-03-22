@@ -5,9 +5,9 @@
 import React from 'react';
 import {fireEvent, getByText, screen} from '@testing-library/react';
 import * as storeHook from '../contexts/store.context';
-import {LanguageSelector} from '../i18n/LanguageSelector.component';
 import {mockRootStore} from '../__mocks__/root_store.mock';
 import {renderWithProvider} from '../__mocks__/provider.mock';
+import {LanguageSelector} from '../components/Languages/LanguageSelector';
 
 // Mock the useStore (custom hook)
 jest.mock('../contexts/store.context', () => ({

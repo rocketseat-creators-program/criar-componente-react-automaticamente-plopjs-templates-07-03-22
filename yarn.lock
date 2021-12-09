@@ -975,16 +975,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@brandalley/smk@^1.2.13":
-  version "1.2.13"
-  resolved "https://npm.pkg.github.com/download/@brandalley/smk/1.2.13/8132ffae82a0ec85db2959d4cf235bac15cf7f35131af933f36b2dcd3ed51007#caae2c1f88a2fc51094b782366e6168a7c18478e"
-  integrity sha512-14IQpMJ8I3zhOpM6Y44+LhUQIQyNMVihi/ffw6hddD5lvyfU2xW1ksukCCNtP2YTLbHwRjDt1hvH71+pYExsgg==
-  dependencies:
-    i18n-js "^3.8.0"
-    mobx "^6.3.7"
-    mobx-state-tree "^5.0.5"
-    reflect-metadata "^0.1.13"
-
 "@cypress/request@^2.88.7":
   version "2.88.7"
   resolved "https://registry.yarnpkg.com/@cypress/request/-/request-2.88.7.tgz#386d960ab845a96953723348088525d5a75aaac4"
@@ -6274,11 +6264,6 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
-
-reflect-metadata@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerate-unicode-properties@^9.0.0:
   version "9.0.0"

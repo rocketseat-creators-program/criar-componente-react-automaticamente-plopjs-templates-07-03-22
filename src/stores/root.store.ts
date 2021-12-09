@@ -1,7 +1,6 @@
 import { applySnapshot, getSnapshot, Instance, types } from 'mobx-state-tree';
-import { LanguageStore } from '@brandalley/smk';
 import store from 'store';
-import { laguageInitialState } from 'stores/language.store';
+import { laguageInitialState, LanguageStore } from 'stores/language.store';
 
 const languageStore = LanguageStore.create(laguageInitialState);
 export type LanguageStoreType = Instance<typeof LanguageStore>;

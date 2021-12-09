@@ -1,11 +1,8 @@
-import {AvailableLanguages, Language} from '@brandalley/smk';
-// import {availableLanguages} from 'i18n/index';
 import {useStore} from 'contexts/store.context';
 import {observer} from 'mobx-react-lite';
 import React, {useMemo} from 'react';
 import Select from 'react-select';
-
-// const languages: Language[] = [...availableLanguages];
+import {Language, AvailableLanguages} from 'stores/language.store';
 
 interface LanguageOptions {
 	value: string;
@@ -13,7 +10,6 @@ interface LanguageOptions {
 }
 
 export const LanguageSelector = observer(() => {
-	// const [currentLanguage, setCurrentLanguage] = useState<string>('en');
 	const {
 		language: {currentLanguage, languages, setCurrentLanguage},
 	} = useStore();

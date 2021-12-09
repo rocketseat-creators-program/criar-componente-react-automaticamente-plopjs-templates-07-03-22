@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import {PagesList} from 'components/PagesList/PagesList';
 import {NextSeo} from 'next-seo';
-import {LanguageSelector} from 'i18n/LanguageSelector.component';
+import {LanguageSelector} from 'components/Languages/LanguageSelector';
 
 const Page = () => {
 	return (

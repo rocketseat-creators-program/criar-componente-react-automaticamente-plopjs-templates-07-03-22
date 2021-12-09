@@ -1,6 +1,6 @@
-import { AvailableLanguages, Language } from '@brandalley/smk';
 import I18n from 'i18n-js';
 import { cast, types } from 'mobx-state-tree';
+import { AvailableLanguages, Language } from 'stores/language.store';
 
 export const LanguageStore = types
 	.model('LanguageStore', {

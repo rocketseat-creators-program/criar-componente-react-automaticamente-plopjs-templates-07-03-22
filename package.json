@@ -17,7 +17,6 @@
 		"test:cypress-open": "yarn build && start-server-and-test start http://localhost:3000 cypress:open"
 	},
 	"dependencies": {
-		"@brandalley/smk": "^1.2.13",
 		"@fortawesome/fontawesome-free": "^5.15.4",
 		"@fortawesome/fontawesome-svg-core": "^1.2.36",
 		"@fortawesome/free-solid-svg-icons": "^5.15.4",
