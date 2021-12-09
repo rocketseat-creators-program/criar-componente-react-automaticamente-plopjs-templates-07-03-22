@@ -2,32 +2,23 @@
  * @jest-environment jsdom
  */
 
-import React, {createContext} from 'react';
-import {fireEvent, getByText, render, screen} from '@testing-library/react';
+import React from 'react';
+import {fireEvent, getByText, screen} from '@testing-library/react';
 import * as storeHook from '../contexts/store.context';
-import {RootStoreType} from '../stores/root.store';
 import {LanguageSelector} from '../i18n/LanguageSelector.component';
 import {mockRootStore} from '../__mocks__/root_store.mock';
+import {renderWithProvider} from '../__mocks__/provider.mock';
 
 // Mock the useStore (custom hook)
 jest.mock('../contexts/store.context', () => ({
 	useStore: () => mockRootStore,
 }));
 
-const MockStoreContext = createContext<RootStoreType | undefined>(undefined);
-
-const renderComponent = () =>
-	render(
-		<MockStoreContext.Provider value={mockRootStore}>
-			<LanguageSelector />,
-		</MockStoreContext.Provider>,
-	);
-
 describe('Language Selector', () => {
 	it('Current language should be English', async () => {
 		jest.spyOn(storeHook, 'useStore').mockImplementation(jest.fn());
 
-		renderComponent();
+		renderWithProvider(<LanguageSelector />);
 
 		const enCurrentLanguageText = screen.getByText('current language: en');
 		expect(enCurrentLanguageText).toBeInTheDocument();
@@ -40,7 +31,7 @@ describe('Language Selector', () => {
 	it('Should have a select (notn null) in the document', async () => {
 		jest.spyOn(storeHook, 'useStore').mockImplementation(jest.fn());
 
-		renderComponent();
+		renderWithProvider(<LanguageSelector />);
 
 		const selectElement = screen.getByTestId('select-language');
 		expect(selectElement).toBeDefined();
@@ -50,7 +41,7 @@ describe('Language Selector', () => {
 	it('Should change the current language', async () => {
 		jest.spyOn(storeHook, 'useStore').mockImplementation(jest.fn());
 
-		const {container} = renderComponent();
+		const {container} = renderWithProvider(<LanguageSelector />);
 
 		const selectElement = screen.getByTestId('select-language');
 		const selectorInputEl = container.querySelector('input');

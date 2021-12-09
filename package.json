@@ -9,7 +9,9 @@
 		"cypress": "cypress run",
 		"cypress:all": "cypress run-ct",
 		"cypress:open": "cypress open",
-		"test": "jest --coverage",
+		"test": "jest",
+		"test:coverage": "jest --coverage",
+		"test:coverage-summary": "jest  --coverage --coverageReporters=\"text-summary\"",
 		"test:watch": "jest --coverage --watch",
 		"test:cypress": "yarn build && start-server-and-test start http://localhost:3000 cypress",
 		"test:cypress-open": "yarn build && start-server-and-test start http://localhost:3000 cypress:open"
