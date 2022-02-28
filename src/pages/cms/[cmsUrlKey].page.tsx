@@ -14,7 +14,7 @@ export interface CmsPagePaths {
 	params: CmsPageParams;
 }
 
-const topCmsUrlKey: string[] = ['testing', 'bacon'];
+const topCmsUrlKey: string[] = ['about-us', 'careers'];
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths: CmsPagePaths[] = topCmsUrlKey.map((cmsUrlKey: string) => ({

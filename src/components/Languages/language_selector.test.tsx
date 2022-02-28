@@ -2,15 +2,14 @@
  * @jest-environment jsdom
  */
 
-import React from 'react';
 import {fireEvent, getByText, screen} from '@testing-library/react';
-import * as storeHook from '../contexts/store.context';
-import {mockRootStore} from '../__mocks__/root_store.mock';
-import {renderWithProvider} from '../__mocks__/provider.mock';
-import {LanguageSelector} from '../components/Languages/LanguageSelector';
+import * as storeHook from '../../contexts/store.context';
+import {LanguageSelector} from './LanguageSelector';
+import {mockRootStore} from '../../__mocks__/root_store.mock';
+import {renderWithProvider} from '../../__mocks__/provider.mock';
 
 // Mock the useStore (custom hook)
-jest.mock('../contexts/store.context', () => ({
+jest.mock('../../contexts/store.context', () => ({
 	useStore: () => mockRootStore,
 }));
 
@@ -22,10 +21,6 @@ describe('Language Selector', () => {
 
 		const enCurrentLanguageText = screen.getByText('current language: en');
 		expect(enCurrentLanguageText).toBeInTheDocument();
-
-		const selectElement = screen.getByTestId('select-language');
-		expect(selectElement).toBeDefined();
-		expect(selectElement).not.toBeNull();
 	});
 
 	it('Should have a select (notn null) in the document', async () => {

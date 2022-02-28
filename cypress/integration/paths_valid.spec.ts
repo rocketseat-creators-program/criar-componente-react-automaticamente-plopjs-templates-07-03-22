@@ -91,12 +91,12 @@ describe('Valid Paths: All should NOT return 404', () => {
 		cy.visit('/product/bacon').get('h1').should('not.have.text', '404');
 	});
 
-	it('/cms/testing', () => {
-		cy.visit('/cms/testing').get('h1').should('not.have.text', '404');
+	it('/cms/about-us', () => {
+		cy.visit('/cms/about-us').get('h1').should('not.have.text', '404');
 	});
 
-	it('/cms/bacon', () => {
-		cy.visit('/cms/bacon').get('h1').should('not.have.text', '404');
+	it('/cms/careers', () => {
+		cy.visit('/cms/careers').get('h1').should('not.have.text', '404');
 	});
 
 	it('/catalog/testing', () => {

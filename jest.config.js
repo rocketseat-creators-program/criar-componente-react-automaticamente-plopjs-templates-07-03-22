@@ -1,5 +1,6 @@
 module.exports = {
-	collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+	testRegex: '(/__tests__/.*|(\\.|/)(test))\\.(js|jsx|ts|tsx)?$',
+	collectCoverageFrom: ['src/stores/', 'src/**/*.{js,jsx,ts,tsx}'],
 	moduleNameMapper: {
 		/* Handle CSS imports (with CSS modules)
     https://jestjs.io/docs/webpack#mocking-css-modules */

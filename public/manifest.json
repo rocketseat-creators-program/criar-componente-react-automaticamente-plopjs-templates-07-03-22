@@ -4,9 +4,9 @@
 	"display": "standalone",
 	"scope": "/",
 	"start_url": "/",
-	"name": "BrandAlley",
-	"short_name": "BrandAlley",
-	"description": "Up to 80% off Designer Clothing, Designer Bags, Homeware and Beauty",
+	"name": "NextJs PWA eCommerce",
+	"short_name": "PWA eCom",
+	"description": "It's an React eCommerce built with NextJs + TypeScript + Mobx-State-Tree + SASS + TDD",
 	"icons": [{
 			"src": "/images/manifest/icon-192x192.png",
 			"sizes": "192x192",

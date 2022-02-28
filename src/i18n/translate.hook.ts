@@ -1,6 +1,7 @@
 import I18n from 'i18n-js';
 import { useStore } from 'contexts/store.context';
-import { Language, AvailableLanguages } from '@brandalley/smk';
+import { AvailableLanguages } from 'i18n/index';
+import { Language } from 'i18n/index';
 
 export interface UseTranslateProduct {
 	translate: (content: string) => string;

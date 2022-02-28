@@ -1,11 +1,11 @@
 
-# NextJs PWA E-commerce: Progressive web application
+# **NextJs PWA E-commerce**: Progressive web application
 
 STACK: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup) | [NextJS](https://nextjs.org/docs/getting-started) | [Mobx-State-Tree](https://mobx-state-tree.js.org/intro/welcome) | [SASS](https://sass-lang.com/documentation) | [BEM Syntax](http://getbem.com/introduction/) | [Jest](https://jestjs.io/docs/getting-started) | [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) | [Cypress](https://docs.cypress.io/)
 
 This is a e-commerce app built with React with all the stack mentioned above. I used the best practices of the market. I'm being careful about performance and SEO all the time. So I suggest to check this documentation before start coding.
 
-## The PWA (Progressive Web Application)
+## **The PWA** (Progressive Web Application)
 
 As you can see on the name, it’s a web app that uses [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), [manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest), and other web-platform features combined with [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) to give users an experience on par with native apps.
 
@@ -13,7 +13,7 @@ In short words, the user can install the web application as an app on their comp
 
 It looks complex but React make it simple, and if you use the [next-pwa](https://github.com/shadowwalker/next-pwa) library, as this app is using, it will require almost zero-config to make it work well.
 
-## Running App Locally
+## **Running App Locally**
 
 1. Clone repository
 2. Install packages
@@ -29,7 +29,7 @@ It looks complex but React make it simple, and if you use the [next-pwa](https:/
    
 *P.S.: The PWA is disallowed for dev*
 
-## Running Production
+## **Running Production**
 
 1. Run build
 	```
@@ -43,14 +43,29 @@ It looks complex but React make it simple, and if you use the [next-pwa](https:/
 
 3. Access <http://localhost:3000/>
 
-## Testing PWA
+## **TDD** - Test-Driven Development
+The development practice focused on creating test cases before developing the actual code, at really means developing using the baby steps technique and testing and “refactoring” every little progress.
+
+- **WRITE** a “single” test describing an aspect of the program.
+- **RUN** the test, which should fail because the program lacks that feature.
+- **WRITE** “just enough” code, the simplest possible, just to make the test pass.
+- **INCREMENT** / “refactor” the code keeping the simplicity criteria.
+- **REPEAT** it, “accumulating” unit tests, until you achieve the program goal.
+
+### **Folders Structure**
+The component and function tests are located in their own directory to be found easily.
+
+- The extension `.spec.ts|tsx` means it's a **CYPRESS** test.
+- The extension `.test.ts|tsx` means it's a **JEST** test.
+
+### **Testing PWA**
 
 - Turn on/off the wifi and refresh the website page. You should be able to keep navigating on the pages you have already accessed.
 - On the right side of the URL input on the browser or in the setting menu, you can find a link to install the app. Do it and open the PWA on your computer.
 
 **IMPORTANT:** Always test the PWA after any change in the code the be sure everything still working fine.
 
-## NextJS
+## **NextJS**
 
 NextJs has a file-system based router built on the [concept of pages](https://nextjs.org/docs/basic-features/pages).
 
@@ -62,7 +77,7 @@ Read more on NextJs official documentation:
 - [Basic Features: Pages | Next.js](https://nextjs.org/docs/basic-features/pages)
 - [Routing: Introduction | Next.js](https://nextjs.org/docs/routing/introduction)
 
-### Static Paths
+### **Static Paths**
 If you create `pages/about.page.tsx` that exports a React component like below, it will be accessible at `/about`.
 The router supports nested files. If you create a nested folder structure files will be automatically routed in the same way still.
 ```
@@ -87,7 +102,7 @@ export default ContactsPage;
 ```
 `getLayout` is required for all pages. It's responsible for adding the header and footer. Go to the `src/layout` to check what layouts are available.
 
-### Dynamic Paths
+### **Dynamic Paths**
 To match a dynamic segment you can use the bracket syntax. This allows you to match named parameters.
 For example:
 `pages/blog/[slug].tsx` → `/blog/:slug (/blog/hello-world)`
@@ -142,7 +157,7 @@ CmsPage.getLayout = (page: ReactElement) => {
 
 export default CmsPage;
 ```
-### Catch-All Routes: Multiple Nested Dynamic Paths
+### **Catch-All Routes: Multiple Nested Dynamic Paths**
 Dynamic routes can be extended to catch all paths by adding three dots (...) inside the brackets.
 For example:
 `pages/post/[...slug].tsx` matches `/post/a`, but also `/post/a/b`, `/post/a/b/c` and so on.
@@ -207,7 +222,7 @@ CatalogCategoryPage.getLayout = (page: ReactElement) => {
 export default CatalogCategoryPage;
 ```
 
-### Linking Pages
+### **Linking Pages**
 The Next.js router allows you to do client-side route transitions between pages, similar to a single-page application.
 A React component called Link is provided to do this client-side route transition.
 ```
@@ -215,35 +230,35 @@ import Link from 'next/link'
 <Link href="/about">...</Link>
 ```
 
-### Linking to Dynamic Paths
+### **Linking to Dynamic Paths**
 ```
 <Link href={`/blog/${encodeURIComponent(post.slug)}`}>...</Link>
 ```
 
-### Linking to Nested Dynamic Paths
+### **Linking to Nested Dynamic Paths**
 ```
 <Link href={`/catalog/${encodeURIComponent(category.slug)}/${encodeURIComponent(subcategory.slug)}`}>...</Link>
 ```
 
-### Testing Pages
+### **Testing Pages**
 It's easy to messy with pages file and break the urls of que ecommerce, so you can test all the url (valid and invalid) using cypress.
 ```
 yarn test:cypress
 ```
 Alternatively you can use `yarn test:cypress-open` to watch the test running in the browser.
 
-## Mobile First
+## **Mobile First**
 It’s a mobile-first app. Please, develop for mobile and adapt to bigger screens.
 How to develop for mobile-first: [Why you’ve got to start practicing mobile-first development](https://getflywheel.com/layout/start-practicing-mobile-first-development/)
 
-## Styles
+## **Styles**
 The app uses SASS superset of CSS to style the components and also uses BEM Syntax to keep the code clean and easy to read and maintain.
 
 You have some default classes that you should use to set the font styles like size, weight, decoration and position. Check the default classes section to learn more about it.
 
 Don't hesitate to ask for help if you have any questions about BEM Syntax. Finding the right name for the class could look tricky, but using it wrong could be worst than not using it.
 
-### Folder Structure
+### **Folder Structure**
 Path: `src/styles`
 
 - `base`: Where we keep the core configurations of styles and default classes.
@@ -258,7 +273,7 @@ Where we keep the homepage style as NextJs don’t allow to relocate the index f
 
 - `theme`: Where we keep the resets and styles specifics for the theme.
 
-### Pages & Components
+### **Pages & Components**
 To make it easier to find the styles for each component we are keeping the styles related to every component or page in the related folder(outside the style folder).
 _For example: When you create a new component in the src/components folder you should create your component folder, the index.tsx (your react component) and the _component-name.scss._
 ```
@@ -270,7 +285,7 @@ src
 ```
 "_" is used to denote partials. Underscore in front of the file name won't be generated into the compiled CSS unless you import it into another sass file.
 
-### Default Classes
+### **Default Classes**
 - `txt-left` | `txt-center` | `txt-right` 
 - `theme-container`
 - `txt-light` | `txt-regular` | `txt-bold` 
@@ -278,7 +293,7 @@ src
 - `txt-uppercase` | `txt-underline` | `txt-decoration-none` 
 - `txt-xxs` | `txt-xs` | `txt-s` | `txt-m` | `txt-l` | `txt-xl` | `txt-xxl`: The font-size starting on `10px` increasing two-by-two until `32px`.
 
-### Breakpoints
+### **Breakpoints**
 They are mixins that you can easily re-use.
 - `small-screens`: max-width 480px
 - `mobile`: min-width 480px
@@ -291,12 +306,12 @@ They are mixins that you can easily re-use.
 - `desktop-big-screens`: min-width 1200px and max-width 1600px
 - `big-screens`: min-width 1600px
 
-### Browser Mixins
-- IE: Internet Explorer
-- MS: Microsoft Edge
-- IOS: Any iOS device with touchable screen
+### **Browser Mixins**
+- **IE**: Internet Explorer
+- **MS**: Microsoft Edge
+- **IOS**: Any iOS device with touchable screen
 
-### Helpers
+### **Helpers**
 Some mixins and functions to save time and reduce number of line to write.
 - `rem($pixels)`: convert pixel to rem
 - `flex($direction, $justify, $align, $wrap)`: If you would not like to set a property you can use "unset" as a value.
@@ -306,7 +321,7 @@ Some mixins and functions to save time and reduce number of line to write.
 - `middle-image`: This mixin will positionate the image in the middle (vertical and horizontal) of the element. You must use `position: relative` on the parent and set the `width` and `height` of the parent. Use the `overflow: hidden` if the image is bigger than the parent element.
 - `font-icon($family, $position, $icon-code, $top, $right, $bottom, $left)`: icons as pseudo elements
 
-#### Font-icon Mixin
+#### **Font-icon Mixin**
 This mixin will help you to add any icon from fontawesome as pseudo element in any element.
 usage: `@include font-icon() { ... set any custom property ... };`
 Use \ before the icon-code.
@@ -324,11 +339,11 @@ EXAMPLE:
 }
 ```
 
-### Fonts
+### **Fonts**
 We are using Fontawesome and Google fonts and all the setup is already done.
 Related files: `src/styles/base/_icons.scss` and `src/styles/base/_typography.scss`
 
-## SSR - Server Side Rendering
+## **SSR - Server Side Rendering**
 We use the Incremental Static Regeneration (ISR). So,  when we specify the `revalidate: 200` (200 is the default used by NextJs for eCommerce) in the getStaticProps function on the page it means that the app should check for data update after 200 seconds. Basically the step-by-step is like this:
 
 1. The initial request to the product page will show the cached page with the cached data (Ex.: Price).
@@ -347,12 +362,12 @@ You can have a full overview of this feature here:
 
 Check the [NextJS documentation](https://nextjs.org/docs/basic-features/data-fetching) if you have any doubt.
 
-### Default Revalidate
+### **Default Revalidate**
 Product & Catalog Page: `60 sec`
 Other Dynamic Pages: `200 sec`
 You can change it on the `.env` file. Remember to restart your application every time when you change the environment file.
 
-### Pre-Cached Pages
+### **Pre-Cached Pages**
 We use the `getStaticPaths` to set the pages that should be processed and cached while building. But to save building time, the app only does it for a specific range of pages that the BE provide to us in an array. The other pages not included in this array will be cached on the user's first access to the page. So, if no one accesses a page, we will never have the cached version of that page.
 
 _For example: For the product pages we can cache while building the app only the top 100 products._
@@ -378,7 +393,7 @@ Next.js will serve the user a fallback version of the page, essentially a tempor
 
 Once a page has been generated, it is put into the pool of all generated pages.
 
-### Handling Props & Data
+### **Handling Props & Data**
 The `getStaticProps` is required as `getStaticPaths` function in the page component. It will handle props and data, and provide the props to the main component of the page.
 
 Use it to fetch data during the build time.
@@ -403,7 +418,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 ```
 The revalidate is defined here.
 
-### Types & Interfaces
+### **Types & Interfaces**
 Always add on top of the page just after the imports the Props instance for the `page/component`.
 On the CMS page, used on the previous examples, the type will be like this:
 ```
@@ -417,10 +432,10 @@ export interface CmsPagePaths {
 ```
 **NEVER** use “I” (ICmsPages) on the name of the interfaces, be descriptive and use Props in the end if you are creating an interface for props or like in the example above, we used Params and Paths.
 
-## SEO - Search Engine Optimization
+## **SEO - Search Engine Optimization**
 To manage the SEO stuff like [meta tags](https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags) and [schemas](https://snipcart.com/blog/schema-markup-ecommerce-website-seo) we are using the [next-seo](https://github.com/garmeeh/next-seo) library.
 
-### SEO Config
+### **SEO Config**
 Inside every page directory, you can find the `_seo.config.tsx` file. Inside this file, you can handle the meta title, meta description, canonical, open graph, Twitter tag and others.
 
 You can set a default SEO config if you prefer: [GitHub - garmeeh/next-seo: Next SEO is a plug in that makes managing your SEO easier in Next.js projects](https://github.com/garmeeh/next-seo#default-seo-configuration)
@@ -485,5 +500,5 @@ const ProductPage = ({productUrlKey}: ProductPageParams) => {
 };
 ```
 
-### Schema
+### **Schema**
 Not done yet. If you want to do it: [GitHub - garmeeh/next-seo: Next SEO is a plug in that makes managing your SEO easier in Next.js projects](https://github.com/garmeeh/next-seo#json-ld)

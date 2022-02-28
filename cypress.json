@@ -1,4 +1,9 @@
 {
 	"baseUrl": "http://localhost:3000",
-	"defaultCommandTimeout": 6000
+	"defaultCommandTimeout": 6000,
+	"integrationFolder": "./",
+	"testFiles": [
+		"cypress/integration/*.spec.**",
+		"src/components/**/*.spec.**"
+	]
 }
