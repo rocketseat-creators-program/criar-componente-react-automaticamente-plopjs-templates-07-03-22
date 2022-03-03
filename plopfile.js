@@ -1,11 +1,17 @@
 module.exports = function (plop) {
+	plop.setHelper('dash-case', function (text) {
+		return text.replace(/[A-Z]/g, (letter, index) =>
+			index === 0 ? letter.toLowerCase() : `-${letter.toLowerCase()}`
+		);
+	});
+
 	plop.setGenerator('basic-component', {
 		description: 'Auto create a basic component',
 		prompts: [
 			{
 				type: 'input',
 				name: 'name',
-				message: 'What is the component name?',
+				message: 'What is the component name (Please, use PascalCase)?',
 			},
 		],
 		actions: [

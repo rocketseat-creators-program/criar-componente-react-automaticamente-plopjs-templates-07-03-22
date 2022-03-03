@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react-lite';
 import React from 'react';
 
-import {useTranslate} from 'hooks/translate.hook';
+import {useTranslate} from 'i18n/translate.hook';
 import {useStore} from 'contexts/store.context';
 
 interface {{name}}Props {
@@ -13,8 +13,8 @@ export const {{name}} = observer(({anyProp}: {{name}}Props) => {
 	const {user} = useStore();
 
 	return (
-		<div className="{{name}}">
-			<h1>{translate('{{name}}.title')}</h1>
+		<div className="{{dash-case name}}">
+			<h1>{translate('{{camelCase name}}.title')}</h1>
 		</div>
 	);
 });
