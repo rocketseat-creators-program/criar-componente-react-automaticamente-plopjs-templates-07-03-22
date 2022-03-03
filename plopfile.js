@@ -25,6 +25,15 @@ module.exports = function (plop) {
 				path: 'src/components/{{name}}/_{{dash-case name}}.style.scss',
 				templateFile: 'plop-templates/component.style.scss.hbs',
 			},
+			{
+				type: 'modify',
+				path: 'src/styles/main.scss',
+				pattern:
+					/(\/\/ PLOP WILL AUTO-IMPORT YOUR COMPONENT STYLE HERE. DO NOT REMOVE)/g,
+				template:
+					// eslint-disable-next-line quotes
+					"@import '../components/{{name}}/{{dash-case name}}.style';\n$1",
+			},
 		],
 	});
 };
