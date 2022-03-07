@@ -100,4 +100,11 @@ module.exports = function (plop) {
 		prompts: promptQuestions,
 		actions: [...createBasicComponent, createCypressFile],
 	});
+
+	plop.setGenerator('fully-testable-component', {
+		description:
+			'Auto create a basic component setup with styles, translation, test(CYPRESS) and test(JEST) file',
+		prompts: promptQuestions,
+		actions: [...createBasicComponent, createJestFile, createCypressFile],
+	});
 };
