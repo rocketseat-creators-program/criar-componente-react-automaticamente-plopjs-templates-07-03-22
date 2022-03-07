@@ -1,3 +1,8 @@
+const pascalToSpecialCase = (str, separator) =>
+	str.replace(/[A-Z]/g, (letter, index) =>
+		index === 0 ? letter.toLowerCase() : `${separator}${letter.toLowerCase()}`
+	);
+
 // eslint-disable-next-line quotes
 const translationTemplate = `{{camelCase name}}: {title: '{{name}}'},\n$1`;
 const translationPattern =
@@ -57,15 +62,16 @@ const promptQuestions = [
 
 const createJestFile = {
 	type: 'add',
-	path: 'src/components/{{name}}/{{dash-case name}}.test.tsx',
+	path: 'src/components/{{name}}/{{underscore-case name}}.test.tsx',
 	templateFile: 'plop-templates/jest.test.tsx.hbs',
 };
 
 module.exports = function (plop) {
 	plop.setHelper('dash-case', function (text) {
-		return text.replace(/[A-Z]/g, (letter, index) =>
-			index === 0 ? letter.toLowerCase() : `-${letter.toLowerCase()}`
-		);
+		return pascalToSpecialCase(text, '-');
+	});
+	plop.setHelper('underscore-case', function (text) {
+		return pascalToSpecialCase(text, '_');
 	});
 
 	plop.setGenerator('basic-component', {
