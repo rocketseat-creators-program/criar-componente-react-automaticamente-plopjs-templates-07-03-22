@@ -55,6 +55,12 @@ const promptQuestions = [
 	},
 ];
 
+const createJestFile = {
+	type: 'add',
+	path: 'src/components/{{name}}/{{dash-case name}}.test.tsx',
+	templateFile: 'plop-templates/jest.test.tsx.hbs',
+};
+
 module.exports = function (plop) {
 	plop.setHelper('dash-case', function (text) {
 		return text.replace(/[A-Z]/g, (letter, index) =>
@@ -67,5 +73,12 @@ module.exports = function (plop) {
 			'Auto create the basic component setup with styles and translation',
 		prompts: promptQuestions,
 		actions: createBasicComponent,
+	});
+
+	plop.setGenerator('jest-component', {
+		description:
+			'Auto create a basic component setup with styles, translation and test(JEST) file',
+		prompts: promptQuestions,
+		actions: [...createBasicComponent, createJestFile],
 	});
 };

@@ -1,0 +1,26 @@
+/**
+ * @jest-environment jsdom
+ */
+
+import {screen} from '@testing-library/react';
+import * as storeHook from '../../contexts/store.context';
+import { {{name}} } from '../../components/{{name}}/{{name}}';
+import {mockRootStore} from '../../__mocks__/root_store.mock';
+import {renderWithProvider} from '../../__mocks__/provider.mock';
+
+// Mock the useStore (custom hook)
+jest.mock('../../contexts/store.context', () => ({
+	useStore: () => mockRootStore,
+}));
+
+describe('Language Selector', () => {
+	it('Should have an h1 in the document with the component name', async () => {
+		jest.spyOn(storeHook, 'useStore').mockImplementation(jest.fn());
+
+		renderWithProvider(<{{name}} />);
+
+		const selectElement = screen.findAllByRole('heading', {level: 1});
+		expect(selectElement).toBeDefined();
+		expect(selectElement).toBe('{{name}}');
+	});
+});
