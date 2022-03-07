@@ -1,0 +1,7 @@
+/// <reference types="cypress" />
+
+describe('Check page {{name}}', () => {
+	it('Title should be the component name', () => {
+		cy.visit('/').get('h1').should('have.text', '{{name}}');
+	});
+});

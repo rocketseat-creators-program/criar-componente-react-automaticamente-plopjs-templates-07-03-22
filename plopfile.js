@@ -66,6 +66,12 @@ const createJestFile = {
 	templateFile: 'plop-templates/jest.test.tsx.hbs',
 };
 
+const createCypressFile = {
+	type: 'add',
+	path: 'src/components/{{name}}/{{underscore-case name}}.spec.tsx',
+	templateFile: 'plop-templates/cypress.test.tsx.hbs',
+};
+
 module.exports = function (plop) {
 	plop.setHelper('dash-case', function (text) {
 		return pascalToSpecialCase(text, '-');
@@ -86,5 +92,12 @@ module.exports = function (plop) {
 			'Auto create a basic component setup with styles, translation and test(JEST) file',
 		prompts: promptQuestions,
 		actions: [...createBasicComponent, createJestFile],
+	});
+
+	plop.setGenerator('cypress-component', {
+		description:
+			'Auto create a basic component setup with styles, translation and test(CYPRESS) file',
+		prompts: promptQuestions,
+		actions: [...createBasicComponent, createCypressFile],
 	});
 };
