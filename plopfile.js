@@ -34,6 +34,23 @@ module.exports = function (plop) {
 					// eslint-disable-next-line quotes
 					"@import '../components/{{name}}/{{dash-case name}}.style';\n$1",
 			},
+			{
+				type: 'modify',
+				path: 'src/i18n/locales/en.ts',
+				// eslint-disable-next-line quotes
+				template: "{{camelCase name}}: {title: '{{name}}'},\n$1",
+				pattern:
+					/(\/\/ PLOP WILL AUTO-IMPORT YOUR COMPONENT TRANSLATION HERE. DO NOT REMOVE)/g,
+			},
+			{
+				type: 'modify',
+				path: 'src/i18n/locales/fr.ts',
+
+				// eslint-disable-next-line quotes
+				template: "{{camelCase name}}: {title: '{{name}}'},\n$1",
+				pattern:
+					/(\/\/ PLOP WILL AUTO-IMPORT YOUR COMPONENT TRANSLATION HERE. DO NOT REMOVE)/g,
+			},
 		],
 	});
 };

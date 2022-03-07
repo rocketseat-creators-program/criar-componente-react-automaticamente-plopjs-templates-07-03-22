@@ -15,7 +15,7 @@
 		"test:watch": "jest --coverage --watch",
 		"test:cypress": "yarn build && start-server-and-test start http://localhost:3000 cypress",
 		"test:cypress-open": "yarn build && start-server-and-test start http://localhost:3000 cypress:open",
-		"auto-create": "plop"
+		"auto-create": "plop && yarn prettier --w src/i18n/locales"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.4",
@@ -59,6 +59,7 @@
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^27.3.1",
 		"plop": "^3.0.5",
+		"prettier": "^2.5.1",
 		"react-test-renderer": "^17.0.2",
 		"ts-jest": "^27.0.7",
 		"typescript": "4.4.4"
